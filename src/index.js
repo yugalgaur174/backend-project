@@ -9,7 +9,7 @@ import connectDB from "./db/index.js";
 // import { path } from "express/lib/application";
 
 dotenv.config({
-    path:'./env'
+    path:'./.env'
 })
 
 connectDB()
