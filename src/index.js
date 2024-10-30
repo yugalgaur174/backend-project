@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 
 import mongoose from "mongoose"; 
 import { DB_NAME } from "./constants.js";
-
+import { app } from "./app.js";
 import connectDB from "./db/index.js";
 // import { path } from "express/lib/application";
 
@@ -21,8 +21,10 @@ connectDB()
 .catch((err) => {
     console.log("MongoDb connection failed ",err);
     
-})
-
+}) 
+process.on('uncaughtException', (error) => {
+    console.error('Unhandled Exception:', error);
+});
 // import express from "express";
 // const app=express()
 

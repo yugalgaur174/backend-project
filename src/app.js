@@ -15,4 +15,25 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+
+//routes import
+import userRouter from "./routes/user.routes.js"
+
+
+
+
+
+//routes declaration
+//earlier all files were in app so we didnt needed a middleware, but now we have seperate file we will use app.use earlier we used app.get
+app.use("/api/v1/users",userRouter)
+
+
+
+
+//https://localhost:8000/api/v1/users/register
+
+
+
+
+
 export {app}
